@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+
+<mapper namespace="com.deep.basket.dao.BoardDao">
+    <insert id="publish" parameterType="BoardVo">
+        INSERT INTO boardvo (
+        no,
+        board_title,
+        board_cost,
+        board_category,
+        subcategory,
+        board_content,
+        picture
+        ) VALUES (
+        basket_boardvo_seq.NEXTVAL,
+        #{boardTitle},
+        #{boardCost},
+        #{boardCategory},
+        #{subcategory},
+        #{boardContent},
+        #{picture}
+        )
+    </insert>
+
+    <select id="total_views" resultType="BoardVo">
+        select
+        *
+        from
+        boardvo
+    </select>
+
+    <select id="total_views_stories" resultType="BoardVo">
+        <![CDATA[
+        select
+        *
+        from
+        boardvo
+        where
+        rownum <= 7
+        order by 1 desc
+        ]]>
+    </select>
+
+</mapper>

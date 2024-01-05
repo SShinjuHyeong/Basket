@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="defaultStatementTimeout" value="60"/>							<!-- DB 응답 타임아웃 설정 -->
+        <setting name="safeRowBoundsEnabled" value="false"/>							<!-- 중첩구문내 RowBound 사용 허용여부 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>						    <!-- 전통적 DB 컴럼명을 JAVA의 Camel표기법으로 자동 매핑 설정 -->
+    </settings>
+
+    <typeAliases>
+    </typeAliases>
+
+</configuration>
